@@ -73,7 +73,7 @@ let mon;
  }
 
  //console.log('month:',mon)
- const dateEnter=day+' '+mon+' '; ////get the date in api format date
+        const dateEnter=day+' '+mon+' '; ////get the date in api format date
  //console.log(dateEnter)
 
   var today=new Date();
