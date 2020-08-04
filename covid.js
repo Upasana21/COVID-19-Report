@@ -5,12 +5,14 @@ class COVID{
      const timeReport =await fetch('https://api.covid19india.org/data.json');
      
      const Report= await covidReport.json();
+     
      const time_series= await timeReport.json();
-        //console.log(Report.statewise)
-        //console.log(time_series.cases_time_series)
-   
+       // console.log(Report);
+       // console.log(Report.statewise)
+          
      if(type===1){
-         return Report.statewise;
+        return Report;
+        //return Report.statewise;
      }
     else if(type ===2){
         return time_series.cases_time_series;

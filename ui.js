@@ -9,8 +9,8 @@ class UI{
         //console.log(this.caseReport)
 
         this.caseReport.innerHTML=`
-        <ul>
-      <h4 align="text-center">${x.state}</h4>
+       <ul>
+       <h4 align="text-center">${x.state}</h4>
         <li>Active: ${x.active}</li>
         <li>Confirmed: ${x.confirmed}</li>
         <li>Deaths: ${x.deaths}</li>
@@ -22,14 +22,14 @@ class UI{
     dailyReport(daily){
       this.eachDayReport.innerHTML=`
       <ul>
-      <h5 align="text:center"> ${daily.date} 2020:</h5>
+      <h5 align="text:center"> ${daily.date} 2020</h5>
       <li>Daily Confirmed: ${daily.dailyconfirmed}</li>
       <li>Daily Deceased:${daily.dailydeceased}</li>
       <li>Daily Recovered:${daily.dailyrecovered}</li>
       <li>Total Confirmed:${daily.totalconfirmed}</li>
       <li>Total Deaths:${daily.totaldeceased}</li>
       <li>Total  Recovered:${daily.totalrecovered}</li>
-
+      
       </ul>
       `
     }
