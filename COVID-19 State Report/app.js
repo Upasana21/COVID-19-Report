@@ -14,11 +14,13 @@ stateDistrict.getStateDistrict()
   //console.log(report[stateId]); 
    const State = Object.keys(report);
     //console.log(State);
-  
+   
   let stateUI ='';
   State.map((stateName)=>{
-     stateUI += `<li id="${stateName}">${stateName}</li>`
+     stateUI += `<div id="${stateName}" class="mlr-1 p-2" style="border-style:outset;border-radius:5px;margin:5px 10px;
+     min-width:150px;text-align:center;background-color:#4fa899;">${stateName}</div>`
   })
+   
   StateDiv.innerHTML=stateUI;
   //console.log(stateUI);
    
@@ -39,12 +41,13 @@ StateDiv.addEventListener('click',(e)=>{
       //console.log(districtList);
       //console.log(Object.keys(districtList))// district name arr
       const districtNameArray=Object.keys(districtObj.districtData);
-     
+          
 
 
       let districtUI=''
       districtNameArray.map(distName=>{
-         districtUI +=`<li id='${distName}'>${distName}</li>`
+         districtUI +=`<div id='${distName}' class="mlr-1 p-2" style="border-style:outset;border-radius:5px;margin:5px 10px;
+         min-width:150px;text-align:center;background-color:#adc9c5;">${distName}</div>`
       })  
       DistrictDiv.innerHTML=districtUI;   
    })    
@@ -52,20 +55,21 @@ StateDiv.addEventListener('click',(e)=>{
 })
 
 ////////////////////////////////////////////
-//let districtId=''
+
 DistrictDiv.addEventListener('click',(e)=>{
-   const distId=e.target.id;
+   const DistrictName=e.target.id;
    //console.log(distId);
    stateDistrict.getStateDistrict()
    .then(repo=>{
       
-      //console.log(repo[stateId].districtData[distId])
-      const distCovidInfo=repo[stateId].districtData[distId];
+      //console.log(repo[stateId].districtData[DistrictName])
+      const distCovidInfo=repo[stateId].districtData[DistrictName];
 
-     const distCase=` <li>Active Cases: ${distCovidInfo.active}</li>
-                     <li>Confirmed: ${distCovidInfo.confirmed}</li>
-                     <li>Deceased:${distCovidInfo.deceased}</li>
-                     <li>Recovered:${distCovidInfo.recovered}</li>`
+      const distCase=`<h5 class="text-align:center";style="color: white;background-color:black;">${DistrictName}</h5>
+                     <div style="color: white;background-color:black; padding-left:20px;">Active Cases: ${distCovidInfo.active}</div>
+                     <div style="color: white;background-color:black; padding-left:20px;">Confirmed: ${distCovidInfo.confirmed}</div>
+                     <div style="color: white;background-color:black; padding-left:20px;">Deceased:${distCovidInfo.deceased}</div>
+                     <div style="color: white;background-color:black; padding-left:20px;">Recovered:${distCovidInfo.recovered}</div>`
    
     CaseOutput.innerHTML=distCase;
      
