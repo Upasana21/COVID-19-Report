@@ -12,7 +12,7 @@ covid.getCovidReport(1)
     stateData.map((state) => {
       // console.log(state)
       StateOutput += `<h5 id="${state.statecode}" style="cursor:pointer;background-color:#4c595c;color:white;
-      width:250px;height:50px;border:1px solid #DADFE0;padding:3px;">${state.state}</h5>`
+      width:250px;height:50px;border:1px solid #DADFE0;padding:3px;text-align:center">${state.state}</h5>`
       const stateId = StateOutput.id;
     })
     states.innerHTML = StateOutput;

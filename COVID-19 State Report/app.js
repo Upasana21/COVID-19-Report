@@ -1,8 +1,8 @@
-const StateDiv = document.getElementById('state');
-const DistrictDiv =document.getElementById('district');
+const Stateli = document.getElementById('state');
+const Districtli =document.getElementById('district');
 const CaseOutput= document.getElementById('output');
 
-//console.log(StateDiv);
+//console.log(Stateli);
 const stateDistrict= new State_District;
 
 let stateId='';
@@ -17,17 +17,17 @@ stateDistrict.getStateDistrict()
    
   let stateUI ='';
   State.map((stateName)=>{
-     stateUI += `<div id="${stateName}" class="mlr-1 p-2" style="border-style:outset;border-radius:5px;margin:5px 10px;
-     min-width:150px;text-align:center;background-color:#4fa899;">${stateName}</div>`
+     stateUI += `<li id="${stateName}" class="mlr-1 p-2" style="border-style:outset; border-radius:5px;margin:5px 10px;
+     min-width:150px;text-align:center;background-color:#4fa899;list-style: none; ">${stateName}</li>`
   })
    
-  StateDiv.innerHTML=stateUI;
+  Stateli.innerHTML=stateUI;
   //console.log(stateUI);
    
  })
 
 ////////////////////////////////////////////////////////
-StateDiv.addEventListener('click',(e)=>{
+Stateli.addEventListener('click',(e)=>{
    stateId=e.target.id;
    //console.log(stateId);
    CaseOutput.innerHTML='';
@@ -46,17 +46,17 @@ StateDiv.addEventListener('click',(e)=>{
 
       let districtUI=''
       districtNameArray.map(distName=>{
-         districtUI +=`<div id='${distName}' class="mlr-1 p-2" style="border-style:outset;border-radius:5px;margin:5px 10px;
-         min-width:150px;text-align:center;background-color:#adc9c5;">${distName}</div>`
+         districtUI +=`<li id='${distName}' class="mlr-1 p-2" style="border-style:outset;border-radius:5px;margin:5px 10px;
+         min-width:150px;text-align:center;background-color:#adc9c5;list-style: none;">${distName}</li>`
       })  
-      DistrictDiv.innerHTML=districtUI;   
+      Districtli.innerHTML=districtUI;   
    })    
    
 })
 
 ////////////////////////////////////////////
 
-DistrictDiv.addEventListener('click',(e)=>{
+Districtli.addEventListener('click',(e)=>{
    const DistrictName=e.target.id;
    //console.log(distId);
    stateDistrict.getStateDistrict()
@@ -65,11 +65,13 @@ DistrictDiv.addEventListener('click',(e)=>{
       //console.log(repo[stateId].districtData[DistrictName])
       const distCovidInfo=repo[stateId].districtData[DistrictName];
 
-      const distCase=`<h5 class="text-align:center";style="color: white;background-color:black;">${DistrictName}</h5>
-                     <div style="color: white;background-color:black; padding-left:20px;">Active Cases: ${distCovidInfo.active}</div>
-                     <div style="color: white;background-color:black; padding-left:20px;">Confirmed: ${distCovidInfo.confirmed}</div>
-                     <div style="color: white;background-color:black; padding-left:20px;">Deceased:${distCovidInfo.deceased}</div>
-                     <div style="color: white;background-color:black; padding-left:20px;">Recovered:${distCovidInfo.recovered}</div>`
+      const distCase=`<h5 class="text-align:center";style="color: white;padding-left:20px;background-color:black;">${DistrictName}</h5>
+                  <div style="background-color:black;opacity:0.9;border-radius:5px;">
+                  <li style="list-style: none;color: yellow; padding-left:20px;">Active Cases: ${distCovidInfo.active}</li>
+                  <li style="list-style: none;color: white; padding-left:20px;">Confirmed: ${distCovidInfo.confirmed}</li>
+                  <li style="list-style: none;color: red; padding-left:20px;">Deceased:${distCovidInfo.deceased}</li>
+                  <li style="list-style: none;color: green; padding-left:20px;">Recovered:${distCovidInfo.recovered}</li>
+                  </div>`
    
     CaseOutput.innerHTML=distCase;
      

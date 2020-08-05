@@ -11,10 +11,10 @@ class UI{
         this.caseReport.innerHTML=`
        <ul>
        <h4 align="text-center">${x.state}</h4>
-        <li>Active: ${x.active}</li>
-        <li>Confirmed: ${x.confirmed}</li>
-        <li>Deaths: ${x.deaths}</li>
-        <li>Recovered: ${x.recovered}</li>
+        <li style="list-style:none;">Active: ${x.active}</li>
+        <li style="list-style:none;">Confirmed: ${x.confirmed}</li>
+        <li style="list-style:none;">Deaths: ${x.deaths}</li>
+        <li style="list-style:none;">Recovered: ${x.recovered}</li>
         </ul>
        `
     }
@@ -23,12 +23,12 @@ class UI{
       this.eachDayReport.innerHTML=`
       <ul>
       <h5 align="text:center"> ${daily.date} 2020</h5>
-      <li>Daily Confirmed: ${daily.dailyconfirmed}</li>
-      <li>Daily Deceased:${daily.dailydeceased}</li>
-      <li>Daily Recovered:${daily.dailyrecovered}</li>
-      <li>Total Confirmed:${daily.totalconfirmed}</li>
-      <li>Total Deaths:${daily.totaldeceased}</li>
-      <li>Total  Recovered:${daily.totalrecovered}</li>
+      <li  style="list-style:none;">Daily Confirmed: ${daily.dailyconfirmed}</li>
+      <li style="list-style:none;">Daily Deceased:${daily.dailydeceased}</li>
+      <li style="list-style:none;">Daily Recovered:${daily.dailyrecovered}</li>
+      <li style="list-style:none;">Total Confirmed:${daily.totalconfirmed}</li>
+      <li style="list-style:none;">Total Deaths:${daily.totaldeceased}</li>
+      <li style="list-style:none;">Total  Recovered:${daily.totalrecovered}</li>
       
       </ul>
       `
