@@ -30,19 +30,23 @@
     <div class="container" id="xyz">
         <h3 class='display' id="childxyz" style="color: white;">India Covid-19 StateReport</h3> <br>
         <div class="row">
-            
+
             <div class="col-md-4" id="states"></div>
 
-            <div class="col" id="dateCard" style="padding-left:25px; position:-webkit-sticky; position:sticky;top:0;">
-                <label for="date" style="color: white;">Enter date: </label>
-                <input type="date" id="date" min="2020-01-30"><br><br>
-                <div class="row" style="background-color:#ABCDD4; max-width: 300px;">
-                    <div id="CaseReport" class="col-md-12"></div>
-                </div><br>
-                <div class="row" style=" background-color:#abb47f;max-width: 300px;">
-                    <div id="eachDayReport" class="col-md-12"></div>
+            <div>
+                <div class="col" id="dateCard" style="padding-left:25px; position:sticky;top:100px;">
+                    <label for="date" style="color: white;">Enter date: </label>
+                    <input type="date" id="date" min="2020-01-30"><br><br>
+                    <div class="row" style="background-color:#ABCDD4; max-width: 300px;opacity: 0.8;
+                    border-radius: 5px;box-shadow: 5px 8px aliceblue;">
+                        <div id="CaseReport" class="col-md-12"></div>
+                    </div><br>
+                    <div class="row" style=" background-color:#abb47f;max-width: 300px;opacity:0.8;border-radius: 5px;">
+                        <div id="eachDayReport" class="col-md-12"></div>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
     <footer class="text-center mt-3 p-2" style="color:black">

@@ -30,7 +30,7 @@ stateDistrict.getStateDistrict()
 StateDiv.addEventListener('click',(e)=>{
    stateId=e.target.id;
    //console.log(stateId);
-
+   CaseOutput.innerHTML='';
    stateDistrict.getStateDistrict()
    .then(rep=>{
 
